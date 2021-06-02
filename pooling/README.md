@@ -32,3 +32,20 @@ Plate Position,Source Well ID,Destination Tube ID,Volume
 2,D6,A2,2
 
 ...
+
+
+# csv_for_robot.R
+Script csv_for_robot.R transform pooling volume data, stored as matrixes (PCR plates) in excel spreadsheet, into table, sored as csv file that can be used by amplicon_libraries_pooling.py. Script can transform as many plates as you need, unless they are sored in the same excel sheet. However, amplicon_libraries_pooling.py can pool up to five plates in one run.
+
+**Requirements:**
+RStudio, ‘readxl’ package, Excel
+
+**Usage:**
+Keep the script and excel files in the same folder. Open the script in the RStudio add in the first line the path to the folder in which you store the files. Install (line 3) and load (line 5) the ‘readxl’ package. Pooling destination wells (tubes) you can change in the line 26 and output file name in line 62. Next upload the function ‘csv_to_robot’ (lines 7-63) and finally in the last line (66) add name of your excel file and excel sheet name that contains your data. Run the function. Output csv file will appear in your working directory.
+
+Structure of excel file is also important (check the Pooling_example.xlsx file). The most important part is that to add **number of the plate**, and word **“plate”** in the right position. Plate number should be in cell in the plate corner, bounded by A from below and 1 from the right. And “plate” world should located in the cell to the left of plate number cell. Particular location of your pooling plates in the spreadsheet doesn’t matter.
+
+
+![image](https://user-images.githubusercontent.com/11144828/120454712-6ca10480-c394-11eb-81b0-373fa9c3804c.png)
+
+
